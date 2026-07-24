@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ur3e">
+
+  <!-- Load UR macro -->
+  <xacro:include filename="$(find ur_description)/urdf/ur_macro.xacro"/>
+
+  <!-- ROS2 control (replaces transmissions) -->
+  <xacro:include filename="$(find ur_description)/urdf/ur.ros2_control.xacro"/>
+
+  <!-- Create the UR3e -->
+  <xacro:ur_robot
+      prefix=""
+      safety_limits="true"
+      safety_pos_margin="0.1"
+      safety_k_position="20"
+      name="ur3e"
+      joint_limit_velocity="1.5"
+      joint_limit_acceleration="3.0"
+      sim_gazebo="true"
+  />
+
+</robot>

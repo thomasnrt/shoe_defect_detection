@@ -1,0 +1,7 @@
+/**:
+  ros__parameters:
+    joint_state_topic: /joint_states
+    attached_collision_object_topic: /move_group/attached_collision_object
+    publish_planning_scene_topic: /move_group/publish_planning_scene
+    monitored_planning_scene_topic: /move_group/monitored_planning_scene
+    wait_for_initial_state_timeout: 10.0

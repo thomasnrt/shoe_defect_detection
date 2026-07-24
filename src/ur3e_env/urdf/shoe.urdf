@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot name="shoe">
+  <link name="shoe_link">
+    <visual>
+      <geometry>
+        <box size="0.25 0.10 0.08"/>
+      </geometry>
+      <material>
+        <color rgba="0.1 0.1 0.8 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.25 0.10 0.08"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.3"/>
+      <inertia ixx="0.001" iyy="0.001" izz="0.001" ixy="0" ixz="0" iyz="0"/>
+    </inertial>
+  </link>
+</robot>
+

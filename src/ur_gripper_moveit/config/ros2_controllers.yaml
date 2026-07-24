@@ -1,0 +1,43 @@
+# Emplacement : ur3e_ws/src/.../config/ros2_controllers.yaml
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+
+    joint_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    robotiq_gripper_controller:
+      type: position_controllers/GripperActionController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+joint_trajectory_controller:
+  ros__parameters:
+    joints:
+      - shoulder_pan_joint
+      - shoulder_lift_joint
+      - elbow_joint
+      - wrist_1_joint
+      - wrist_2_joint
+      - wrist_3_joint
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+    # --- SECTION À AJOUTER/MODIFIER ---
+    constraints:
+      stopped_velocity_tolerance: 0.1
+      goal_time: 0.0  # Désactive l'échec par dépassement de temps
+      shoulder_pan_joint: { trajectory: 0.2, goal: 0.1 }
+      shoulder_lift_joint: { trajectory: 0.2, goal: 0.1 }
+      elbow_joint: { trajectory: 0.2, goal: 0.1 }
+      wrist_1_joint: { trajectory: 0.2, goal: 0.1 }
+      wrist_2_joint: { trajectory: 0.2, goal: 0.1 }
+      wrist_3_joint: { trajectory: 0.2, goal: 0.1 }
+    # ----------------------------------
+
+robotiq_gripper_controller:
+  ros__parameters:
+    joint: robotiq_85_left_knuckle_joint

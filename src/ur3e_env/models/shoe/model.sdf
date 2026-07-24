@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<sdf version="1.7">
+  <model name="shoe">
+    <static>false</static>
+
+    <link name="shoe_link">
+
+      <!-- Collision shape -->
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.3 0.15 0.1</size> <!-- slightly bigger so it's easily visible -->
+          </box>
+        </geometry>
+      </collision>
+
+      <!-- Visual shape -->
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.3 0.15 0.1</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.1 0.1 0.8 1</ambient>
+          <diffuse>0.1 0.1 0.8 1</diffuse>
+        </material>
+      </visual>
+
+      <!-- Mass for physics -->
+      <inertial>
+        <mass>0.3</mass>
+        <inertia>
+          <ixx>0.001</ixx>
+          <iyy>0.001</iyy>
+          <izz>0.001</izz>
+        </inertia>
+      </inertial>
+
+      <!-- Pose relative to the model include in the world -->
+      <pose>0 0 0 0 0 0</pose>
+
+    </link>
+  </model>
+</sdf>
+
